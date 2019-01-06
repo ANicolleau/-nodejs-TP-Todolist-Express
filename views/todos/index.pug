@@ -1,0 +1,76 @@
+include header.pug
+body
+    if params == 'todos'
+        h1 #{name}
+        table
+            thead
+                tr
+                    td ID
+                    td Message
+                    td Completion
+                    td Date de création
+                    td Date de mise à jour
+            tbody
+                    each todo in todos
+                        tr
+                            td= todo.id
+                            td= todo.message
+                            td= todo.completion
+                            td= todo.createAt
+                            td= todo.updatedAt
+                            td 
+                                a(href='/todos/' + todo.id) Afficher
+                                a(href='/todos/'+ todo.id +'/edit') Modifier
+                                form(method='POST', action='/todos/'+ todo.id +'?_method=DELETE')
+                                    button(type='submit') Supprimer
+    else if params == 'users'
+        h1 #{name}
+        table
+            thead
+                tr
+                    td id
+                    td firstname
+                    td lastname
+                    td username
+                    td password
+                    td email
+                    td createAt
+                    td updatedAt
+            tbody
+                    each user in users
+                        tr
+                            td= user.id
+                            td= user.firstname
+                            td= user.lastname
+                            td= user.username
+                            td= user.password
+                            td= user.email
+                            td= user.createAt
+                            td= user.updatedAt
+                            td 
+                                a(href='/users/' + user.id) Afficher
+                                a(href='/users/'+ user.id +'/edit') Modifier
+                                form(method='POST', action='/users/'+ user.id +'?_method=DELETE')
+                                    button(type='submit') Supprimer
+
+    else if params == 'userid'
+        h1 #{name}
+        table
+            thead
+                tr
+                    td ID
+                    td Message
+                    td Completion
+                    td Date de création
+                    td Date de mise à jour
+            tbody
+                    each todo in todos
+                        tr
+                            td= todo.id
+                            td= todo.message
+                            td= todo.completion
+                            td= todo.createAt
+                            td= todo.updatedAt
+    a(href='/todos/add') Ajouter Todo
+    a(href='/users/add') Ajouter Utilisateur
+

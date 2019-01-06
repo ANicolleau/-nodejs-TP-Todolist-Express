@@ -1,0 +1,66 @@
+h1 {
+    color: red;
+    text-align: center;
+    padding-bottom: 50;
+}
+
+h2 {
+    text-align: center;
+    padding-bottom: 50;
+}
+
+body {
+    background-color: beige;
+}
+
+table {
+    padding: 5;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    text-align: left;
+    display: inline-block;
+    width: 30%;
+}
+
+textarea {
+    margin: auto;
+}
+
+tbody {
+    
+}
+
+tr {
+
+}
+
+td {
+    padding-left: 50;
+}
+
+a {
+    padding-left: 50;
+}
+
+button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 50;
+    margin-top: 10%;
+}
+
+input {
+    position: absolute;
+    margin-top: 100;
+}

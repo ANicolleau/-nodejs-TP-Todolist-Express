@@ -1,0 +1,44 @@
+include header.pug
+body
+    if params == 'todos'
+        h1 #{name}
+        table
+            thead
+                tr
+                    td id
+                    td userid
+                    td message
+                    td completion
+                    td createAt
+                    td updatedAt
+            tbody
+                tr
+                    td #{todos.id}
+                    td #{todos.userid}
+                    td #{todos.message}
+                    td #{todos.completion}
+                    td #{todos.createAt}
+                    td #{todos.updatedAt}
+    else
+        h1 #{name}
+        table
+            thead
+                tr
+                    td id
+                    td firstname
+                    td lastname
+                    td username
+                    td password
+                    td email
+                    td createAt
+                    td updatedAt
+            tbody
+                tr
+                    td #{users.id}
+                    td #{users.firstname}
+                    td #{users.lastname}
+                    td #{users.username}
+                    td #{users.password}
+                    td #{users.email}
+                    td #{users.createAt}
+                    td #{users.updatedAt}

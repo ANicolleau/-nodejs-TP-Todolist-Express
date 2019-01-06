@@ -1,0 +1,71 @@
+include header.pug
+body
+    h1 #{name}
+    if params == 'todoput'
+        h2 Modifier une todo
+        form(action='/todos/'+todos.id+'?_method=PUT' method='post')
+            label message : 
+            textarea(name='message', rows='3', cols='30') #{todos.message}
+            br
+            label completion : 
+            select(name='completion')
+                option(value='To do') To do
+                option(value='In Progess') In Progress
+                option(value='Done') Done
+            input(type='submit')
+    
+    else if params == 'todopost'
+        h2 Ajouter une todo
+        form(action='/todos' method='post')
+            label Numéro d'utilisateur :
+                select(name='userid')
+                    each user in users
+                        option(value=user.id) #{user.id}
+            br
+            label message : 
+            textarea(name='message', rows='3', cols='30')
+            br
+            label completion : 
+            select(name='completion')
+                option(value='To do') To do
+                option(value='In Progess') In Progress
+                option(value='Done') Done
+            input(type='submit')
+
+    else if params == 'userput'
+        h2 Modifier l'utilisateur
+        form(action='/users/'+users.id+'?_method=PUT' method='post')
+            label Prénom :           
+            textarea(name='firstname', rows='3', cols='30') #{users.firstname}
+            br
+            label Nom : 
+            textarea(name='lastname', rows='3', cols='30') #{users.lastname}
+            br
+            label Nom d'utilisateur : 
+            textarea(name='username', rows='3', cols='30') #{users.username}
+            br
+            label Mot de passe : 
+            textarea(name='password', rows='3', cols='30') #{users.password}
+            br
+            label Email : 
+            textarea(name='email', rows='3', cols='30') #{users.email}
+            input(type='submit')
+    
+    else if params = 'userpost'
+        h3 Ajouter un utilisateur
+        form(action='/users' method='post')
+            label Prénom :           
+            textarea(name='firstname', rows='3', cols='30')
+            br
+            label Nom : 
+            textarea(name='lastname', rows='3', cols='30')
+            br
+            label Nom d'utilisateur : 
+            textarea(name='username', rows='3', cols='30')
+            br
+            label Mot de passe : 
+            textarea(name='password', rows='3', cols='30')
+            br
+            label Email : 
+            textarea(name='email', rows='3', cols='30')
+            input(type='submit')
